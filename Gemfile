@@ -36,6 +36,9 @@ gem 'devise'
 # gem 'carrierwave', for image upload 
 gem 'carrierwave'
 
+# gem 'ffaker', for fake demo data
+gem 'ffaker'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
