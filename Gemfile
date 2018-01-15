@@ -39,6 +39,9 @@ gem 'carrierwave'
 # gem 'ffaker', for fake demo data
 gem 'ffaker'
 
+# gem 'Kaminari', for data pagination
+gem 'kaminari'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
