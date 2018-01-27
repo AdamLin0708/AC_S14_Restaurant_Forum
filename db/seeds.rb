@@ -8,7 +8,7 @@
 
 
 #create user admin
-User.create(email: "admin@example.com", password: "admin123", role: 'admin')
+User.create(email: "admin@example.com", password: "admin123", role: 'admin', name: '管理員')
 puts "Default admin created!"
 
 
