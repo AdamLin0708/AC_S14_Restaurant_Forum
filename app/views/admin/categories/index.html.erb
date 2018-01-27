@@ -5,7 +5,17 @@
     <%= link_to 'Restaurant', admin_restaurants_path %> 
   </div>
 
+  
   <div class="rpw">
+
+    <div class="form-inline" >
+      <%= form_for [:admin, @category] do |f| %>
+        <div class="form-group">
+          <%= f.text_field :name, placeholder: "Category Name",  class: "form-control" %>
+        </div>
+        <%= f.submit class: "btn btn-primary" %>        
+      <% end %>      
+    </div>
     
     <div class="col-md-12">
       <table class="table table-stripped table-bordered">
