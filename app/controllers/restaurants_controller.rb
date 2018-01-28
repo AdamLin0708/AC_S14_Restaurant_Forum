@@ -11,16 +11,23 @@ class RestaurantsController < ApplicationController
   end
 
 
-  #跟著routes中設定的名稱
+  # 觀看評論網最新訊息
   def feeds
     @recent_restaurants = Restaurant.order(created_at: :desc).limit(10)
     @recent_comments = Comment.order(created_at: :desc).limit(10)
   end
 
+  # 觀看餐廳詳細資訊
   def dashboard
     @restaurant = Restaurant.find(params[:id])
   end
 
+  # TOP10餐廳資訊
+  def ranking
+    @restaurants = Restaurant.order(favorites_count: :desc).limit(10)    
+  end
+
+  # favorite 
   def favorite
     @restaurant = Restaurant.find(params[:id])
     @restaurant.favorites.create!(user: current_user)
@@ -36,6 +43,7 @@ class RestaurantsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  # like
   def like
     @restaurant = Restaurant.find(params[:id])
     @restaurant.likes.create!(user: current_user)
