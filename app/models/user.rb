@@ -8,8 +8,12 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+
+  #User relationship with Restaurant through comment
   has_many :comments, dependent: :restrict_with_error  
-  has_many :restaurants, through: :comments       
+  has_many :commented_restaurants, through: :comments, source: :restaurant
+
+  #User relationship with Restaurant through favortie     
   has_many :favorite, dependent: :destroy
   has_many :favorited_restaurants, through: :favorite, source: :restaurant
 
