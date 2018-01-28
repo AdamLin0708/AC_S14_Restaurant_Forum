@@ -27,7 +27,10 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   
   #users routes
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
+
+  #followship routes
+  resources :followships, only: [:create, :destroy]
 
   #admin
   namespace :admin do
