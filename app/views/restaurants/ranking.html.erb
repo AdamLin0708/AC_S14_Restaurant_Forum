@@ -26,9 +26,13 @@
 
         <div class="ranking-item">
           <div class="col-md-3">  
-           <%= link_to restaurant_path(restaurant) do %>
-             <%= image_tag restaurant.image, class: "img-responsive center-block" %>
-           <% end %>  
+            <% if restaurant.image? %>
+              <%= image_tag restaurant.image, class: "img-rounded img-responsive",
+                  height: "100%" %>
+            <% else %>
+              <%= image_tag "http://via.placeholder.com/200x160", class: "img-responsive img-rounded",
+                  height: "100%" %>
+            <% end %>           
           </div>
 
 
