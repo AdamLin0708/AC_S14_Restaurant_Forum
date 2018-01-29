@@ -24,7 +24,7 @@ class User < ApplicationRecord
   #User following
   has_many :followships, dependent: :destroy
   # has_many :followships, through: :followships, source: :following
-  has_many :followships, through: :followships
+  has_many :followings, through: :followships
 
 
   def admin?
