@@ -41,12 +41,11 @@
 
           <div class="col-md-9">            
             <h4>
-              <%= restaurant.name %>
+              <%= link_to restaurant.name , restaurant_path(restaurant)  %>              
               <span class="label label-default">收藏數:<%= restaurant.favorites_count %></span>
+              <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>     
             </h4>              
-            <p><%= truncate(restaurant.description, length: 100) %></p>
-            <%= link_to "Show", restaurant_path(restaurant), class: "btn btn-primary" %>
-            <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>                      
+            <p><%= truncate(restaurant.description, length: 200) %></p>                            
           </div>
           <div class="clearfix"></div>
         </div>
